@@ -8,19 +8,6 @@
 using namespace cv;
 using namespace std;
 
-Mat selectSubset(Mat &originalImg, int width_patch, int height_patch)
-{
-    //copy a sub matrix of X to Y with starting coodinate (startX,startY)
-    // and dimension (cols,rows)
-    int startX = rand() % (originalImg.cols - width_patch);
-    int startY = rand() % (originalImg.rows - height_patch);
-    Mat tmp = originalImg(cv::Rect(startX, startY, width_patch, height_patch)); 
-    Mat subset;
-    tmp.copyTo(subset);
-    return subset;
-
-}
-
 int main()
 {
     //Start clock
